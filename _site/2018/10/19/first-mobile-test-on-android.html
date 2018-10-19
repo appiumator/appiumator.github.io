@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/2018/10/19/first-mobile-test-on-android.html" /><!-- Title, description, author --><title>First mobile test on android device | Appiumator - Start automation of mobile tests now!</title>
+  <meta name="description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
+  <meta name="author" content="GG" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="First mobile test on android device | Appiumator - Start automation of mobile tests now!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/avatar.jpg" />
+  <meta property="og:url" content="http://localhost:4000/2018/10/19/first-mobile-test-on-android.html" />
+  <meta property="og:site_name" content="Appiumator" />
+  <meta property="og:description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/assets/js/skel.min.js" defer></script>
+  <script src="/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="http://localhost:4000/" id="home-link">
+    <span class="image avatar48"><img src="/assets/images/avatar.jpg" alt="Avatar of GG" /></span>
+    <h1 id="title">Appiumator</h1>
+    <p>Start automation of mobile tests now!</p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><li><a href="http://localhost:4000/about/" id="about-link">
+            <span class="icon fa-link">About</span>
+          </a></li><li><a href="http://localhost:4000/" id="appiumator-link">
+            <span class="icon fa-home">Appiumator</span>
+          </a></li><li><a href="http://localhost:4000/blog.html" id="appiumator-your-way-to-automate-mobile-testing-link">
+            <span class="icon fa-pencil-alt">Appiumator - your way to automate mobile testing!</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="mailto:appiumatori@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+	<!-- Post -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>First mobile test on android device</h2>
+				<p>GG, 19 October 2018</p>
+			</header><p>Before we get to the point, let’s stop for a while to talk about Appium itself.</p>
+
+<p>Appium is a free open source project. The whole idea is to create a stable bridge between mobile and computer without coding in SDK or recompiling your app. Requirements? Pretty low: Android SDK, XCode. And this is the only real limitation  - to use XCode you need Mac OS if you want to run your tests on IOS devices. As IMHO to get a full cover it is a must have to run tests on IOS so I will create a guide with usage of Mac OS. However running appium on Android device looks exactly the same on Windows so everyone no matter of what OS is using can follow this article. OK let’s ROCK!</p>
+
+<p>Here we go. At first we need to install some additional staff. Let’s start from scratch then. We need to install Node.js. To do this open your command line and type <code>brew install node</code> (but not with sudo!). After a few moments as a happy user of Node.js let’s install appium by hiting <code>npm install -g appium</code> (but not with sudo!). This command will install the latests stable version of appium. For now it is 1.9.1. What is the most important for us, since 1.8.0 appium is able to run tests parallel which is a milestone in mobile tests automation.</p>
+
+<p>Alright so we have got node, appium and to make installing easy let’s install some health check by typing <code>npm install -g appium-doctor</code>. Now type <code>appium-doctor</code> and see what else do we need. Most likely appium-doctor diagnosed missing java, android sdk, and the latest Xcode version. So the next step is to install from official website latest JAVA SDK and adding it to JAVA_HOME to PATH. To verify if java is succesfully added to PATH type <code>echo &amp;JAVA_HOME</code> and in response you should see the path you set in your PATH. Run your appium-doctor again and you should see that this dependency is met now. Let’s move on and install android SDK. It is also recommended to use the latest version and add ANDROID_HOME to PATH. Again to verify you configured your PATH correctly type <code>echo &amp;ANDROID_HOME</code> and check if responded path is correct. Run appium-doctor again and see if dependecies are met. As a last point is to make sure you have got latest XCODE installed. To do it, go to AppStore and find XCODE and press UPDATE. Now we can check appium-doctor for the last time and all dependecies should be green now. Congratulation! You have just configured Appium!</p>
+
+<h2>Let's do some coding then!</h2>
+
+<p>I usually code my tests in python, so for the example I will use ready solutions which I implemented in this language. Before we start we need to install client by running <code>pip install appium-python-client</code>.</p>
+
+<p>There are few mandatory appium capabilities which needs to be specified while running tests. I pass them as a dictionary when create driver.</p>
+
+<pre><code>
+
+    CAPS_ANDROID = {
+
+        'platformName': 'Android', # this tells appium what platform you want to test
+
+        'platformVersion': '7.1.2', # this as you have already guessed tells what OS version is installed on the device
+
+        'deviceName': 'Android', # as a name you can type whatever
+
+        'browserName': 'Chrome', # for Android Devices the supported browser is Chrome, for IPhone - Safari
+
+        'clearSystemFiles': True, # it's not mandatory but it is very wise to clear a workspace after test
+
+        'automationName': 'UiAutomator2', # there are two automators implemented in Appium but this one is the letest child and supports latest OS and parallel testing and works quicker than previous
+
+        "udid": "", # that is the uniqe for every mobile idetificator which we need to obtain in a sec
+
+    }
+
+  </code></pre>
+
+<p>Now let’s focus on missing udid. To obtain it we need to use a tool which got installed with Android SDK automatically - ADB. Please make sure you have connected via USB cable your mobile corretly. We need to go to command line and type <code>adb devices</code>. As a response we can see:</p>
+
+<pre><code>
+
+List of devices attached
+
+YOGAA1BBB412    device
+
+   </code></pre>
+
+<p>And now all we need to do is to copy ‘YOGAA1BBB412’ and pass it as udid in our CAPS.</p>
+
+<p>Let’s get back to coding. The line which creates webdriver is the same as for Selenium. So in practice we use:</p>
+
+<pre><code>
+
+from appium import webdriver
+
+ 
+
+webdriver.Remote('http://127.0.0.0:4726/wd/hub', {})".format(CAPS_ANDROID)
+
+    </code></pre>
+
+<p>In general appium driver is an extention of selenium webdriver so that is why all commands works in the same way. In this case we are creating Remote driver and as server we are passing IP address with specific port (remember this port as we will be hiting this in a while) and with capabilities set above. The rest remains the same as you are ussually working with Selenium Webdriver.</p>
+
+<h2>And finally we got so far to the last step - Run Appium server.</h2>
+
+<p>Let’s go to command line. In the easiest case we can just simply type appium and we we’ll see fully working appium server listening on some default port. But for a future reference we can distinct it now by port we have already declared when calling webdriver - 4726. So we type <code>appium -p 4726</code> and we can see Appium Welcome message:</p>
+
+<pre><code>
+
+(node:16139) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+
+[Appium] Welcome to Appium v1.8.0
+
+[Appium] Non-default server args:
+
+[Appium]   port: 4726
+
+[Appium] Appium REST http interface listener started on 0.0.0.0:4726
+
+ </code></pre>
+
+<p>The last line is most important - tells us that we started a server on local machine listining at specified port.</p>
+
+<p>Now we get back to the code. Let’s say we run a simple test which we’ll open Google and search for ‘Appium’. For the implementation I leave you a free will but an example can be found on my <a href="https://github.com/appiumator">GitHub!</a> profile.</p>
+
+<p>And here we go. If everything went fine, when we start our tests we should see the great movement in appium instance. First what’s gonna happen is that ADB will install Appium client on our mobile which will allow it to oparate a browser. Oh, by the way - Chrome browser MUST be installed on the device. Then appium will do some basic checks and will open a browser, hit the google.com url and type the phrase. After all we’ll close the browser and Wuala! First Mobile test passed!</p>
+</div>
+	</article>
+</div><!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Appiumator. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+  </ul>
+  
+</div></body>
+</html>
