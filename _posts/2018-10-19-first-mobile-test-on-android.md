@@ -101,6 +101,6 @@ The last line is most important - tells us that we started a server on local mac
 
  
 
-Now we get back to the code. Let's say we run a simple test which we'll open Google and search for 'Appium'. For the implementation I leave you a free will but an example can be found on my <a href="https://github.com/appiumator">GitHub!</a> profile.
+Now we get back to the code. Let's say we run a simple test which we'll open Google and search for 'Appium'. For the implementation I leave you a free will but an example can be found on my <a href="https://github.com/appiumator/appmation1">GitHub!</a> profile.
 
 And here we go. If everything went fine, when we start our tests we should see the great movement in appium instance. First what's gonna happen is that ADB will install Appium client on our mobile which will allow it to oparate a browser. Oh, by the way - Chrome browser MUST be installed on the device. Then appium will do some basic checks and will open a browser, hit the google.com url and type the phrase. After all we'll close the browser and Wuala! First Mobile test passed!
