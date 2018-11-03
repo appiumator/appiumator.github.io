@@ -106,5 +106,5 @@ Let's see the dictionary now:
  
  As you can see as first we select if we are running tests on mobile device or desktop then we select a required environment.
  
- And basically that's it. If you struggle with the implementation you can visit my <a href="https://github.com/appiumator">GitHub!</a> profile.
+ And basically that's it. If you struggle with the implementation you can visit my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.
 
