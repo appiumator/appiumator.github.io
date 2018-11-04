@@ -106,5 +106,41 @@ Let's see the dictionary now:
  
  As you can see as first we select if we are running tests on mobile device or desktop then we select a required environment.
  
+ So In general all we need to do is to open 4 seperate terminal windows and create 4 Appium instances:
+
+ <pre><code>
+ 
+appium -p 4720 --chromedriver-port 9510
+
+appium -p 4725 --chromedriver-port 9515
+
+appium -p 4726 --chromedriver-port 9516
+
+appium -p 4727 --chromedriver-port 9517
+
+ </code></pre>
+ 
+ It is quiet important to distinct also chromedriver by port because you need to remember that this library is going to be called 4 times in the same time.
+ 
+ Now to get the best results from your tests you might want to get some nice looking reports like this one here
+ <a href="#" class="image fit"><img src="{{ 'assets/images/defects.png' | relative_url }}" alt="XCode" /></a>
+ you might want to install allure reporting plugin which will accumulate your test results and present it in nice graphical view. All additional information can be found <a href="https://demo.qameta.io/allure/">here</a>.
+ If you are going to find this plugin usefull simply run <code>pip install allure-pytest</code> in your command line.
+ 
+ Let's get to running your tests. 
+
+ 
+ All what needs to be done now is to go to create appropriate appium instance and  your project directory run in your command line: <code>behave -D device=<device> -D platform=<platform> Test/feature </code>
+ 
+ Peronally I prefered to have previously prepared complete command which will run 4 tests at once and  then create 4 reports of my tests. This is how I used to do it:
+
+ <pre><code>
+
+python3 -m behave -D device=mobile -D platform=iphone -f allure_behave.formatter:AllureFormatter -o %Iphone_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android5  -f allure_behave.formatter:AllureFormatter -o %Android5_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android7  -f allure_behave.formatter:AllureFormatter -o %Android7_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android6  -f allure_behave.formatter:AllureFormatter -o %Android6_test_report% Test/features; allure serve %Iphone_test_report% -p 1114 & allure serve %Android5_test_report% -p 1111 & allure serve %Android6_test_report% -p 1112 & allure serve %Android7_test_report% -p 1113
+
+ </code></pre>
+ 
+ Just to brief explenation: allure report creates HTML server so every report needs to be distinct by port and also to run 4 tests plus 4 report paralelly tests needs to be devided by '&' and to make sure reports will be created when all tests are done then ';' needs to be added before report creating commands.
+
  And basically that's it. If you struggle with the implementation you can visit my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.
 
