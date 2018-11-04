@@ -21,7 +21,7 @@ That approach should avoid a lot of problems just on the start. But how to do th
 Shortly I decided to implement my own way of creating Appium instance just before creating webdriver and then to kill it shortly after the test is finished. The answer is in this line of code:
 
  <pre><code>
-subprocess.Popen(<your_command>, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	subprocess.Popen(<your_command>, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
  </code></pre>
  
  Subproces Popen opens a terminall for you. Shell = true allows you to use it as a shell command line stdout=subprocess.PIPE hides what is displayed in the terminal. It is important because what is appium should not be bothering you. All what we should be focused is test results that's why we skip appium logs.
@@ -30,14 +30,14 @@ subprocess.Popen(<your_command>, shell=True, stdout=subprocess.PIPE, stderr=subp
  Then in your after_all method you should mention this line:
  
   <pre><code>
-subprocess.send_signal(signal.SIGINT)
+	subprocess.send_signal(signal.SIGINT)
  </code></pre>
 
  This line will simply close the terminal and kill the appium server - exactly like ctrl + C.
  
  Great! Everything looks easy. Feeling great excitement to see my test managed by Jenkins I pointed my job on Jenkins to github repository and then troubles began. Simply everytime when I ran my tests paralelly on seperate devices an ugly error come up on the first attempt:
  <pre><code>
- ECONNREFUSED - Connection refused by server
+	ECONNREFUSED - Connection refused by server
  </code></pre>
  What the heck is this now?! I have never seen such an error while running my tests. I was fighting over the week whith this crap. After a lot of new wrinkles appeered on my face I found out that this happens because I was running my appium instances using the same port.
  So I had to implement some mechanism which will distinct every appium server by port. This is what I implemented:
@@ -55,29 +55,29 @@ So basically I decided to cast the free system port to appium start up command a
 But how to say which system port is currently not listining? This is what I invented:
 
 <pre><code>
-def get_free_port():
-    port = randint(1000, 9999)
-    while try_port(port) is False:
-        port = randint(1000, 9999)
-    return port
+	def get_free_port():
+		port = randint(1000, 9999)
+		while try_port(port) is False:
+			port = randint(1000, 9999)
+		return port
 
 
-def try_port(port):
-    result = False
-    check_port = 'lsof -i :{0}'.format(port)
-    process = subprocess.Popen(check_port, shell=True, stdout=subprocess.PIPE)
-    output = None
-    for trial in range(5):
-        try:
-            time.sleep(1)
-            output = str(process.stdout.readline())
-            if 'COMMAND  PID' in output:
-                break
-        except:
-            time.sleep(1)
-    process.send_signal(signal.SIGINT)
-    if 'COMMAND  PID' not in output:
-        result = True
+	def try_port(port):
+		result = False
+		check_port = 'lsof -i :{0}'.format(port)
+		process = subprocess.Popen(check_port, shell=True, stdout=subprocess.PIPE)
+		output = None
+		for trial in range(5):
+			try:
+				time.sleep(1)
+				output = str(process.stdout.readline())
+				if 'COMMAND  PID' in output:
+					break
+			except:
+				time.sleep(1)
+		process.send_signal(signal.SIGINT)
+		if 'COMMAND  PID' not in output:
+			result = True
     return result
 </code></pre>
 

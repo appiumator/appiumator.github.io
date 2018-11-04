@@ -26,7 +26,7 @@ That means your WebDriverAgent has been configured succesfullly. Yupie!
 So what now? Now we need to do what we have done in previous chapter. To manage mobile in appium we need to pass apropriate capabilities to webdriver. Again we need to find out UDID of our mobile. The easiest
 way to find it out is to open SETTING on your phone and go ABOUT and scroll to Serial Number - this is your UDID. Now let's talk for a moment about capabilities.
 
- <pre><code>
+<pre><code>
 
 
         "iphone": {
@@ -42,7 +42,7 @@ way to find it out is to open SETTING on your phone and go ABOUT and scroll to S
             "showXcodeLog": True
         }
 		
-  </code></pre>
+ </code></pre>
   
 
 Potential users will propobly ue iOS 12.0 so I suggest to stick to this version for test purposes. Device name is the same what you can find on your mobile in your options section. Then it is very good practice
@@ -136,7 +136,7 @@ appium -p 4727 --chromedriver-port 9517
 
  <pre><code>
 
-python3 -m behave -D device=mobile -D platform=iphone -f allure_behave.formatter:AllureFormatter -o %Iphone_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android5  -f allure_behave.formatter:AllureFormatter -o %Android5_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android7  -f allure_behave.formatter:AllureFormatter -o %Android7_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android6  -f allure_behave.formatter:AllureFormatter -o %Android6_test_report% Test/features; allure serve %Iphone_test_report% -p 1114 & allure serve %Android5_test_report% -p 1111 & allure serve %Android6_test_report% -p 1112 & allure serve %Android7_test_report% -p 1113
+	python3 -m behave -D device=mobile -D platform=iphone -f allure_behave.formatter:AllureFormatter -o %Iphone_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android5  -f allure_behave.formatter:AllureFormatter -o %Android5_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android7  -f allure_behave.formatter:AllureFormatter -o %Android7_test_report% Test/features & python3 -m behave -D device=mobile -D platform=android6  -f allure_behave.formatter:AllureFormatter -o %Android6_test_report% Test/features; allure serve %Iphone_test_report% -p 1114 & allure serve %Android5_test_report% -p 1111 & allure serve %Android6_test_report% -p 1112 & allure serve %Android7_test_report% -p 1113
 
  </code></pre>
  
