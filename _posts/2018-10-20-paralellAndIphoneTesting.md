@@ -89,10 +89,10 @@ Let's see the dictionary now:
  
     ENV = {
         "mobile": {
-            "android6": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})",
-            "android7": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})",
-            "android5": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})",
-            "iphone": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})"
+            "XIAOMI": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})",
+            "SAMSUNG": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})",
+            "LG": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})",
+            "IPHONE": "mobile_driver.Remote('http://localhost:{port}/wd/hub', {caps})"
         },
         "desktop": {
             "safari": "desktop_driver.Safari()",
