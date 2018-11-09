@@ -21,7 +21,9 @@ That approach should avoid a lot of problems just on the start. But how to do th
 Shortly I decided to implement my own way of creating Appium instance just before creating webdriver and then to kill it shortly after the test is finished. The answer is in this line of code:
 
  <pre><code>
-	subprocess.Popen(<your_command>, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+ 
+		subprocess.Popen(<your_command>, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	
  </code></pre>
  
  Subproces Popen opens a terminall for you. Shell = true allows you to use it as a shell command line stdout=subprocess.PIPE hides what is displayed in the terminal. It is important because what is appium should not be bothering you. All what we should be focused is test results that's why we skip appium logs.
@@ -29,8 +31,10 @@ Shortly I decided to implement my own way of creating Appium instance just befor
  
  Then in your after_all method you should mention this line:
  
-  <pre><code>
-	subprocess.send_signal(signal.SIGINT)
+ <pre><code>
+  
+		subprocess.send_signal(signal.SIGINT)
+	
  </code></pre>
 
  This line will simply close the terminal and kill the appium server - exactly like ctrl + C.
@@ -43,48 +47,52 @@ Shortly I decided to implement my own way of creating Appium instance just befor
  So I had to implement some mechanism which will distinct every appium server by port. This is what I implemented:
  
  <pre><code>
-     APPIUM = {
-        "LG": "appium -p {appium_port} --chromedriver-port {chrome_port}",
-        "XIAOMI": "appium -p {appium_port} --chromedriver-port {chrome_port}",
-        "SAMSUNG": "appium -p {appium_port} --chromedriver-port {chrome_port}",
-        "IPHONE": "appium -p {appium_port} --chromedriver-port {chrome_port}"
-    }
+ 
+		 APPIUM = {
+			"LG": "appium -p {appium_port} --chromedriver-port {chrome_port}",
+			"XIAOMI": "appium -p {appium_port} --chromedriver-port {chrome_port}",
+			"SAMSUNG": "appium -p {appium_port} --chromedriver-port {chrome_port}",
+			"IPHONE": "appium -p {appium_port} --chromedriver-port {chrome_port}"
+		}
+		
 </code></pre>
 
 So basically I decided to cast the free system port to appium start up command and then to make sure also chromedriver will not clash on other tests I made this port unique as well. Great - nearly there!
 But how to say which system port is currently not listining? This is what I invented:
 
 <pre><code>
-	def get_free_port():
-		port = randint(1000, 9999)
-		while try_port(port) is False:
+
+		def get_free_port():
 			port = randint(1000, 9999)
-		return port
+			while try_port(port) is False:
+				port = randint(1000, 9999)
+			return port
 
 
-	def try_port(port):
-		result = False
-		check_port = 'lsof -i :{0}'.format(port)
-		process = subprocess.Popen(check_port, shell=True, stdout=subprocess.PIPE)
-		output = None
-		for trial in range(5):
-			try:
-				time.sleep(1)
-				output = str(process.stdout.readline())
-				if 'COMMAND  PID' in output:
-					break
-			except:
-				time.sleep(1)
-		process.send_signal(signal.SIGINT)
-		if 'COMMAND  PID' not in output:
-			result = True
-    return result
+		def try_port(port):
+			result = False
+			check_port = 'lsof -i :{0}'.format(port)
+			process = subprocess.Popen(check_port, shell=True, stdout=subprocess.PIPE)
+			output = None
+			for trial in range(5):
+				try:
+					time.sleep(1)
+					output = str(process.stdout.readline())
+					if 'COMMAND  PID' in output:
+						break
+				except:
+					time.sleep(1)
+			process.send_signal(signal.SIGINT)
+			if 'COMMAND  PID' not in output:
+				result = True
+		return result
+		
 </code></pre>
 
 In this approach I get a random port and then by using lsof commaind I will see if anything is listining at this port. If nothing is listining then nothing will show up in console logs and port is free. If not then code will try again and again.
 I also repeat this procedute for appium test internaly by setting systemPort appium dependency.
 <pre><code>
-  TestCapabilities.CAPS.get(context.platform).update({"systemPort": system_port})
+	TestCapabilities.CAPS.get(context.platform).update({"systemPort": system_port})
  </code></pre>
 After this I have never seen this bloody error again.
 And this is actually all you need. Or to be more precise that is what I thought is enough to enjoy my mobile tests being managed by Jenkins. I could not be more wrong :) Shortly I ran on more error but in next posts I will explain how I dealt with them.
