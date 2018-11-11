@@ -17,6 +17,8 @@ To run your tests remotely from your machine all what needs to be done you need 
 mobile_driver.Remote('http://<address_ip_of_your_testing_machine>:<appium_port>/wd/hub', {caps})		
 	</code>
 </pre>
+	</code>
+</pre>
 
 OK let's get back to Jenkins. I hope you know what Jenkins is. If no, then please read the official website <a href="https://jenkins.io/">https://jenkins.io/</a>. You gonna find all information how to run your Jenkins server and how to install all usefull plugins. 
 Which plugins I personally perefer will explained in some future post.
