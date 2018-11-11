@@ -3,6 +3,7 @@ title: Parallel and IPhone testing
 author: GG
 layout: post
 ---
+<h3>1. How to become IOs developer?</h3>
 
 I remember how much I was exited when I ran my first test on mobile device - that was thrilling. 
 Empowered with a new motivation I didn't want to stop and wait for another day shift. But later on it wasn't so beautifull any more.
@@ -23,6 +24,9 @@ Then in XCode please select <b>WebDriverAgentLib</b>. As first please select you
 Then in <i>Signing</i> section you need to tick <i>Automatically manage signing</i>. In <i>Signing(Debug)</i> select your TEAM and certificate. The same in <i>Signing(Release)</i>.
 Now repeat this steps in <b>WebDriverAgentRunner</b>. Great, now let's build up this project in XCode. IF XCode is able to build it automatically without any errors it means that everything is working. All works?
 That means your WebDriverAgent has been configured succesfullly. Yupie!
+
+<h3>2. Tell Appium about your IPhone.</h3>
+
 So what now? Now we need to do what we have done in previous chapter. To manage mobile in appium we need to pass apropriate capabilities to webdriver. Again we need to find out UDID of our mobile. The easiest
 way to find it out is to open SETTING on your phone and go ABOUT and scroll to Serial Number - this is your UDID. Now let's talk for a moment about capabilities.
 
@@ -53,7 +57,7 @@ As a last cap I et XCode logs as true to have a better view in what went wrong d
 Just make sure you create a appium driver with the same port what you set up in your appium instance.
 
 
-<h3> Running Parallel tests </h3>
+<h3> 3. Driver selector. </h3>
 
 Assuming your tests went well on IPhone we should be half way there. Now we can run our tests on bot - iOS and Android devices. Our case coverage is increasing now. How about the usability of those tests?
 Well to do not mix up too much with the code everytime we need to run our test on certain device we should introduce some driver selector mechanim to our tests. To make our test base more maintainable I suggest
@@ -122,6 +126,8 @@ appium -p 4727 --chromedriver-port 9517
  
  It is quiet important to distinct also chromedriver by port because you need to remember that this library is going to be called 4 times in the same time.
  
+ <h3>4. Reporting</h3>
+ 
  Now to get the best results from your tests you might want to get some nice looking reports like this one here
  <a href="#" class="image fit"><img src="{{ 'assets/images/defects.png' | relative_url }}" alt="XCode" /></a>
  you might want to install allure reporting plugin which will accumulate your test results and present it in nice graphical view. All additional information can be found <a href="https://demo.qameta.io/allure/">here</a>.
@@ -143,4 +149,6 @@ appium -p 4727 --chromedriver-port 9517
  Just to brief explenation: allure report creates HTML server so every report needs to be distinct by port and also to run 4 tests plus 4 report paralelly tests needs to be devided by '&' and to make sure reports will be created when all tests are done then ';' needs to be added before report creating commands.
 
  And basically that's it. If you struggle with the implementation you can visit my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.
+ 
+ <center><a href="https://appiumator.github.io/2018/10/19/first-mobile-test-on-android.html">Previous post - "First mobile test on android device."</a>. <a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html">Next post - "Running test by jenkins"</a></center>
 

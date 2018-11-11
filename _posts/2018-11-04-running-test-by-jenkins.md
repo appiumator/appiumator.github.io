@@ -4,6 +4,8 @@ author: GG
 layout: post
 ---
 
+<h3>1. Let the code open terminal and type for you.</h3>
+
 Alright folks now you can be very much exited! Now you know how to run your tests on mobile devices, no matter what OS is on board, for a time saving you can run them paralelly and even see the reports of it in a nice and easy readable way!
 How cool is that? Well, not so much TBH.
 Let's be honest - in 2018 CI is everything. No one really runs tests by hand for too long. That can quickly became to be very boring. Also it might be time consuming if you have got more than one product to maintain with your team.
@@ -32,6 +34,8 @@ Shortly I decided to implement my own way of creating Appium instance just befor
 
  This line will simply close the terminal and kill the appium server - exactly like ctrl + C.
  
+<h3>2. First errors - ENCONNREFUSED and practical solution.</h3>
+
  Great! Everything looks easy. Feeling great excitement to see my test managed by Jenkins I pointed my job on Jenkins to github repository and then troubles began. Simply everytime when I ran my tests paralelly on seperate devices an ugly error come up on the first attempt:
  
 <pre><code>ECONNREFUSED - Connection refused by server</code></pre>
@@ -90,4 +94,7 @@ If not then code will try again and again. I also repeat this procedute for appi
  
 After this I have never seen this bloody error again.
 And this is actually all you need. Or to be more precise that is what I thought is enough to enjoy my mobile tests being managed by Jenkins. I could not be more wrong :) Shortly I ran on more error but in next posts I will explain how I dealt with them.As ussually all presented implementation can be found on my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.
+
+ <center><a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Previous post - "Parallel and IPhone testing"</a>
+
  
