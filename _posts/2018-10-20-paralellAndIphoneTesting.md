@@ -150,5 +150,5 @@ appium -p 4727 --chromedriver-port 9517
 
  And basically that's it. If you struggle with the implementation you can visit my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.
  
- <center><a href="https://appiumator.github.io/2018/10/19/first-mobile-test-on-android.html">Previous post - "First mobile test on android device."</a>. <a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html">Next post - "Running test by jenkins"</a></center>
+ <center><a href="https://appiumator.github.io/2018/10/19/first-mobile-test-on-android.html">Previous post - "First mobile test on android device."    </a> <a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html">Next post - "Running test by jenkins"</a></center>
 
