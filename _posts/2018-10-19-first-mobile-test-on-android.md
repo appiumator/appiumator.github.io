@@ -106,4 +106,4 @@ Now we get back to the code. Let's say we run a simple test which we'll open Goo
 And here we go. If everything went fine, when we start our tests we should see the great movement in appium instance. First what's gonna happen is that ADB will install Appium client on our mobile which will allow it to oparate a browser. Oh, by the way - Chrome browser MUST be installed on the device. Then appium will do some basic checks and will open a browser, hit the google.com url and type the phrase. After all we'll close the browser and Wuala! First Mobile test passed!
 
 
-<center><a href="https://appiumator.github.io/2018/10/08/introduction.html">Previous post - "Introduction"</a>. <a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Next post - "Parallel and IPhone testing"</a></center>
+<center><a href="https://appiumator.github.io/2018/10/08/introduction.html">Previous post - "Introduction"   </a> <a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Next post - "Parallel and IPhone testing"</a></center>

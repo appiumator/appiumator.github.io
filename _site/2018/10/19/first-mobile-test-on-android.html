@@ -35,6 +35,7 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   <script src="/assets/js/util.js" defer></script>
   <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
   <script src="/assets/js/main.js" defer></script>
+  <script async src="https://just-comments.com/w.js"></script>
 
 </head><body><!-- Header -->
 <div id="header">
@@ -67,7 +68,9 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 			<header>
 				<h2>First mobile test on android device</h2>
 				<p>GG, 19 October 2018</p>
-			</header><p>Before we get to the point, let’s stop for a while to talk about Appium itself.</p>
+			</header><h3>1. Appium - what is it?</h3>
+
+<p>Before we get to the point, let’s stop for a while to talk about Appium itself.</p>
 
 <p>Appium is a free open source project. The whole idea is to create a stable bridge between mobile and computer without coding in SDK or recompiling your app. Requirements? Pretty low: Android SDK, XCode. And this is the only real limitation  - to use XCode you need Mac OS if you want to run your tests on IOS devices. As IMHO to get a full cover it is a must have to run tests on IOS so I will create a guide with usage of Mac OS. However running appium on Android device looks exactly the same on Windows so everyone no matter of what OS is using can follow this article. OK let’s ROCK!</p>
 
@@ -75,7 +78,7 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 
 <p>Alright so we have got node, appium and to make installing easy let’s install some health check by typing <code>npm install -g appium-doctor</code>. Now type <code>appium-doctor</code> and see what else do we need. Most likely appium-doctor diagnosed missing java, android sdk, and the latest Xcode version. So the next step is to install from official website latest JAVA SDK and adding it to JAVA_HOME to PATH. To verify if java is succesfully added to PATH type <code>echo &amp;JAVA_HOME</code> and in response you should see the path you set in your PATH. Run your appium-doctor again and you should see that this dependency is met now. Let’s move on and install android SDK. It is also recommended to use the latest version and add ANDROID_HOME to PATH. Again to verify you configured your PATH correctly type <code>echo &amp;ANDROID_HOME</code> and check if responded path is correct. Run appium-doctor again and see if dependecies are met. As a last point is to make sure you have got latest XCODE installed. To do it, go to AppStore and find XCODE and press UPDATE. Now we can check appium-doctor for the last time and all dependecies should be green now. Congratulation! You have just configured Appium!</p>
 
-<h2>Let's do some coding then!</h2>
+<h3>2. Let's do some coding then!</h3>
 
 <p>I usually code my tests in python, so for the example I will use ready solutions which I implemented in this language. Before we start we need to install client by running <code>pip install appium-python-client</code>.</p>
 
@@ -129,7 +132,7 @@ webdriver.Remote('http://127.0.0.0:4726/wd/hub', {})".format(CAPS_ANDROID)
 
 <p>In general appium driver is an extention of selenium webdriver so that is why all commands works in the same way. In this case we are creating Remote driver and as server we are passing IP address with specific port (remember this port as we will be hiting this in a while) and with capabilities set above. The rest remains the same as you are ussually working with Selenium Webdriver.</p>
 
-<h2>And finally we got so far to the last step - Run Appium server.</h2>
+<h3> Run Appium server.</h3>
 
 <p>Let’s go to command line. In the easiest case we can just simply type appium and we we’ll see fully working appium server listening on some default port. But for a future reference we can distinct it now by port we have already declared when calling webdriver - 4726. So we type <code>appium -p 4726</code> and we can see Appium Welcome message:</p>
 
@@ -149,10 +152,16 @@ webdriver.Remote('http://127.0.0.0:4726/wd/hub', {})".format(CAPS_ANDROID)
 
 <p>The last line is most important - tells us that we started a server on local machine listining at specified port.</p>
 
-<p>Now we get back to the code. Let’s say we run a simple test which we’ll open Google and search for ‘Appium’. For the implementation I leave you a free will but an example can be found on my <a href="https://github.com/appiumator">GitHub!</a> profile.</p>
+<p>Now we get back to the code. Let’s say we run a simple test which we’ll open Google and search for ‘Appium’. For the implementation I leave you a free will but an example can be found on my <a href="https://github.com/appiumator/appmation1">GitHub!</a> profile.</p>
 
 <p>And here we go. If everything went fine, when we start our tests we should see the great movement in appium instance. First what’s gonna happen is that ADB will install Appium client on our mobile which will allow it to oparate a browser. Oh, by the way - Chrome browser MUST be installed on the device. Then appium will do some basic checks and will open a browser, hit the google.com url and type the phrase. After all we’ll close the browser and Wuala! First Mobile test passed!</p>
+
+<center><a href="https://appiumator.github.io/2018/10/08/introduction.html">Previous post - "Introduction"</a>. <a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Next post - "Parallel and IPhone testing"</a></center>
 </div>
+	 <center><div
+		class="just-comments"
+		data-apikey="fa7789ae-f129-42c1-8af3-c28666835a64">
+	</div></center>
 	</article>
 </div><!-- Footer -->
 <div id="footer">
