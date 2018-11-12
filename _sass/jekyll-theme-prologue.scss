@@ -83,7 +83,7 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: #020202;
 		line-height: 1.5em;
 	}
 
@@ -119,7 +119,7 @@
 
 	strong, b {
 		font-weight: 300;
-		color: #666;
+		color: #020202;
 	}
 
 	em, i {
@@ -193,7 +193,7 @@
 	dl {
 		dt {
 			font-weight: 300;
-			color: #666;
+			color: #020202;
 		}
 		dd {
 			margin-left: 1em
@@ -455,7 +455,7 @@
 		margin-bottom: 40px;
 
 		header {
-			color: #666;
+			color: #020202;
 			text-align: center;
 			background: #fff;
 			margin: 0;
@@ -661,7 +661,7 @@
 			background-image: url('images/overlay.png');
 
 			&.dark {
-				color: #ddd;
+				color: #f7f7f7;
 				color: rgba(255, 255, 255, 0.75);
 
 				h2, h3, h4, h5, h6 {

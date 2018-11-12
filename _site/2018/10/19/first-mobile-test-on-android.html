@@ -36,6 +36,25 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
   <script src="/assets/js/main.js" defer></script>
   <script async src="https://just-comments.com/w.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "https://www.dev-eth0.de/privacy-policy"
+  }
+})});
+</script>
 
 </head><body><!-- Header -->
 <div id="header">
@@ -156,7 +175,7 @@ webdriver.Remote('http://127.0.0.0:4726/wd/hub', {})".format(CAPS_ANDROID)
 
 <p>And here we go. If everything went fine, when we start our tests we should see the great movement in appium instance. First what’s gonna happen is that ADB will install Appium client on our mobile which will allow it to oparate a browser. Oh, by the way - Chrome browser MUST be installed on the device. Then appium will do some basic checks and will open a browser, hit the google.com url and type the phrase. After all we’ll close the browser and Wuala! First Mobile test passed!</p>
 
-<center><a href="https://appiumator.github.io/2018/10/08/introduction.html">Previous post - "Introduction"</a>. <a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Next post - "Parallel and IPhone testing"</a></center>
+<center><a href="https://appiumator.github.io/2018/10/08/introduction.html">Previous post - "Introduction"   </a> <a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Next post - "Parallel and IPhone testing"</a></center>
 </div>
 	 <center><div
 		class="just-comments"

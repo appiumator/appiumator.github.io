@@ -1215,7 +1215,7 @@ input, textarea, select {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
-  color: #666;
+  color: #020202;
   line-height: 1.5em; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1241,7 +1241,7 @@ footer {
 
 strong, b {
   font-weight: 300;
-  color: #666; }
+  color: #020202; }
 
 em, i {
   font-style: italic; }
@@ -1304,7 +1304,7 @@ p, ul, ol, dl, table {
 
 dl dt {
   font-weight: 300;
-  color: #666; }
+  color: #020202; }
 dl dd {
   margin-left: 1em; }
 
@@ -1495,7 +1495,7 @@ button,
   box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
   margin-bottom: 40px; }
   .item header {
-    color: #666;
+    color: #020202;
     text-align: center;
     background: #fff;
     margin: 0;
@@ -1696,7 +1696,7 @@ button,
     box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
     background-image: url("images/overlay.png"); }
     #main > section.dark, #main article.dark {
-      color: #ddd;
+      color: #f7f7f7;
       color: rgba(255, 255, 255, 0.75); }
       #main > section.dark h2, #main > section.dark h3, #main > section.dark h4, #main > section.dark h5, #main > section.dark h6, #main article.dark h2, #main article.dark h3, #main article.dark h4, #main article.dark h5, #main article.dark h6 {
         color: inherit; }

@@ -36,6 +36,25 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
   <script src="/assets/js/main.js" defer></script>
   <script async src="https://just-comments.com/w.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "https://www.dev-eth0.de/privacy-policy"
+  }
+})});
+</script>
 
 </head><body><!-- Header -->
 <div id="header">
@@ -212,7 +231,7 @@ appium -p 4727 --chromedriver-port 9517
 
 <p>And basically that’s it. If you struggle with the implementation you can visit my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.</p>
 
-<center><a href="https://appiumator.github.io/2018/10/19/first-mobile-test-on-android.html">Previous post - "First mobile test on android device."</a>. <a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html">Next post - "Running test by jenkins"</a></center>
+<center><a href="https://appiumator.github.io/2018/10/19/first-mobile-test-on-android.html">Previous post - "First mobile test on android device."    </a> <a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html">Next post - "Running test by jenkins"</a></center>
 
 </div>
 	 <center><div
