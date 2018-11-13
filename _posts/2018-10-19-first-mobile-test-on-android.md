@@ -28,7 +28,7 @@ I usually code my tests in python, so for the example I will use ready solutions
 There are few mandatory appium capabilities which needs to be specified while running tests. I pass them as a dictionary when create driver.
 
  <pre><code>
-
+{% highlight python %}
     CAPS_ANDROID = {
 
         'platformName': 'Android', # this tells appium what platform you want to test
@@ -46,7 +46,7 @@ There are few mandatory appium capabilities which needs to be specified while ru
         "udid": "", # that is the uniqe for every mobile idetificator which we need to obtain in a sec
 
     }
-
+{% endhighlight %}
   </code></pre>
 
 Now let's focus on missing udid. To obtain it we need to use a tool which got installed with Android SDK automatically - ADB. Please make sure you have connected via USB cable your mobile corretly. We need to go to command line and type <code>adb devices</code>. As a response we can see:
