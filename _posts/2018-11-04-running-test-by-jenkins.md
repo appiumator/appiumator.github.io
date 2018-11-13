@@ -95,6 +95,6 @@ If not then code will try again and again. I also repeat this procedute for appi
 After this I have never seen this bloody error again.
 And this is actually all you need. Or to be more precise that is what I thought is enough to enjoy my mobile tests being managed by Jenkins. I could not be more wrong :) Shortly I ran on more error but in next posts I will explain how I dealt with them.As ussually all presented implementation can be found on my <a href="https://github.com/appiumator/appmation1/branches">GitHub!</a> profile.
 
- <center><a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Previous post - "Parallel and IPhone testing"</a>
+ <center><a href="https://appiumator.github.io/2018/10/20/paralellAndIphoneTesting.html">Previous post - "Parallel and IPhone testing"</a> <a href="https://appiumator.github.io/2018/11/13/platform-check.html">Next post - "Platform check"</a></center>
 
  
