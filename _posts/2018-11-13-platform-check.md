@@ -75,4 +75,4 @@ To make sure my tests are now stable I have added the same try for my environmen
 And that's it for this time. My checks are triggered by Jenkins periodically, tests are now fully stable. 
 As ussually you can found my code on <a href="https://github.com/appiumator/appmation1">GitHub!</a> profile.
 
-<center><a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html"><<<Previous post - "Running test by jenkins"</a></center>
+<center><a href="https://appiumator.github.io/2018/11/04/running-test-by-jenkins.html"><<<Previous post - "Running test by jenkins"</a>   </a> <a href="https://appiumator.github.io/2018/11/15/jenkins-plugins.html">Next post - "Jenkins Plugins"</a></center>

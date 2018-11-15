@@ -1192,7 +1192,7 @@ body {
 body {
   background: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 19pt;
+  font-size: 12pt;
   font-weight: 300;
   line-height: 1.75em;
   color: #888; }
@@ -1208,7 +1208,7 @@ body {
 
 input, textarea, select {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 19pt;
+  font-size: 12pt;
   font-weight: 300;
   line-height: 1.75em;
   color: #888; }
@@ -1761,7 +1761,7 @@ button,
 @media screen and (min-width: 961px) and (max-width: 1320px) {
   /* Basic */
   body, input, textarea, select {
-    font-size: 16pt; }
+    font-size: 12pt; }
 
   .container {
     padding: 0 2em 0 2em; }
@@ -1812,7 +1812,7 @@ button,
     overflow-x: hidden; }
 
   body, input, textarea, select {
-    font-size: 16pt; }
+    font-size: 12pt; }
 
   header br {
     display: none; }
