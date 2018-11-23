@@ -1643,7 +1643,7 @@ button,
     #nav ul li a span {
       position: relative;
       display: block;
-      font-size: 0.8em; }
+      font-size: 1.2em; }
       #nav ul li a span::before {
         position: absolute;
         left: 0;
@@ -1785,7 +1785,7 @@ button,
   #nav ul {
     list-style: none; }
     #nav ul li a {
-      font-size: 0.8em;
+      font-size: 1.2em;
       padding-top: 0.5em;
       padding-bottom: 0.5em; }
       #nav ul li a span {
