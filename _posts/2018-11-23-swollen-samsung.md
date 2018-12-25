@@ -37,5 +37,5 @@ A budget solution - no costs at all. And this is where I started. So I tested it
 I will keep you posted about the next solutions. You can share in comments what you are doing to keep your mobiles well during testing.
 
 
-<center><a href="https://appiumator.github.io/2018/11/15/jenkins-plugins.html">Previous post - "Jenkins plugins."</a>
+<center><a href="https://appiumator.github.io/2018/11/15/jenkins-plugins.html">Previous post - "Jenkins plugins."</a><a href="https://appiumator.github.io2018/11/23/expansion.html">Next post - "Expansion"</a></center>
 
