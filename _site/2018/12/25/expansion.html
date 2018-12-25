@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/2018/12/25/expansion.html" /><!-- Title, description, author --><title>Expansion | Appiumator - Free guide</title>
+  <meta name="description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
+  <meta name="author" content="GG" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Expansion | Appiumator - Free guide" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/avatar.jpg" />
+  <meta property="og:url" content="http://localhost:4000/2018/12/25/expansion.html" />
+  <meta property="og:site_name" content="Appiumator" />
+  <meta property="og:description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/assets/js/skel.min.js" defer></script>
+  <script src="/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/assets/js/main.js" defer></script>
+  <script async src="https://just-comments.com/w.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm"
+  }
+})});
+</script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="http://localhost:4000/" id="home-link">
+    <span class="image avatar48"><img src="/assets/images/avatar.jpg" alt="Avatar of GG" /></span>
+    <h1 id="title">Appiumator</h1>
+    <p>Free guide</p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><li><a href="http://localhost:4000/about/" id="about-link">
+            <span class="icon fa-link">About</span>
+          </a></li><li><a href="http://localhost:4000/" id="appiumator-link">
+            <span class="icon fa-home">Appiumator</span>
+          </a></li><li><a href="http://localhost:4000/blog.html" id="appiumator-your-way-to-automate-mobile-testing-link">
+            <span class="icon fa-pencil-alt">Appiumator - your way to automate mobile testing!</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="mailto:appiumator@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+	<!-- Post -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>Expansion</h2>
+				<p>GG, 25 December 2018</p>
+			</header><p>It is pitty, but I had no time recently for my blog and I am really sorry for this. I hope a new year 2019 will be a bit easier for me.
+Anyway, I have got some spare time to share with you my last update which I have done to my mobile testing platform. Due to fact my company is splitting
+in half and QA jenkins will be buried alive and looks like my jenkins will be spread across the newly born company then I am going to need some more slots
+to manage new users. So far only me and my job partner ware using ths platform. Now whole company will be doing it. How to handle with this? Let’s use a SLAVE jenkins.
+machine.</p>
+
+<h3>1. Slave machine</h3>
+
+<p>The whole idea is to distribute some of the jenkins tasks to some remote machine. The connection is supported via <a href="https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/jnlp.html">JNLP</a>.
+The tasks are run on MASTER machine and the HTTP request go straight to SLAVE machine where are executed. This leads to offload the master machine. In my case it is also a great way to
+get access to IE browser which I was missing on iOS. For a testing purpose I was given a PC with Win10 which was left under my desk and I could access it in every moment remotely to run some manual tests.
+For over 90% of time it wasn’t in use at all so for me looks like a great candidate for a SLAVE machine.</p>
+
+<h3>2. Master configuration.</h3>
+
+<p>The whole idea is pretty common so there is a lot of documantation availiable directly on jenkins during configuring a SLAVE machine. First of all go to Manage Jenkins on a main manu on the left and then Manage Node.
+<a href="#" class="image fit"><img src="/assets/images/manage_nodes.png" /></a>
+Then in configuring a new node window, make sure you set as follows:</p>
+
+<p>Remote Root directory - typical directory where you are going to install jenkins on slave machine. <code>C:/Jenkins </code> will do.</p>
+
+<p>Labels  - this is how you will point to this node in a jenkins job configuration</p>
+
+<p>Usage - Due to the fact that we have got some mobiles pluged into master machine and there are no such a devices plugged into slave then this node should be reserved only for desktop browsers. To
+make it easy usable we need to set it as <b> Only builds with label expressions matching this node</b></p>
+
+<p>Launch method - Most important part and it needs to be <b> Launch via Java Web start </b></p>
+
+<p>Internal data - Remoting</p>
+
+<p>Availiability -<b> Keep this agent online as much as possible </b></p>
+
+<p>Environmental variables - Just tick it and the rest will be filled automatically.</p>
+
+<p>That’s it. Let’s save it.</p>
+
+<p><a href="#" class="image fit"><img src="/assets/images/new_node.png" /></a></p>
+
+<p>Cool. On the next page you will be proposed two ways of running jenkins slave. I recommend the second one. Download <b>agent.jar</b> file and save it on slave machine. Keep this page open.
+Now we are going to slave configuration.</p>
+
+<p><a href="#" class="image fit"><img src="/assets/images/agent_win.png" /></a></p>
+
+<h3>3. Slave configuration.</h3>
+
+<p>We are half way there. Let’s go to SLAVE machine now. You need to install Python of course and Java to run .jar file. You might be wonder if you need to install all your pip plugins in here - not any more.
+There are better solutions. It is highly recommended to run your test on insolated environment. It is less important while you run them locally or you have got your own jenkins but when x number of users
+starts to install their own plugins then it is a great time for Shining Panda plugin which I will describe in next chapter.
+Now all you need to do is to follow the intruction displayed on your MASTER machine. Let me remind you - there is a bug in the instruction - workDir variable is between “” which is not allowed in windows terminal.
+When you try to run it as it is you will be exceptioned. Simply skip “” and your SLAVE agent is running.
+Let’s get back to MASTER.</p>
+
+<h3>4. Shining Panda and others.</h3>
+
+<p>Let’s go to task configuration. To redirect this task to SLAVE we need to set a BUILD step and move it up as much as possible. Simply set it like this:</p>
+
+<p><a href="#" class="image fit"><img src="/assets/images/regexp.png" /></a></p>
+
+<p>Now to make sure environments used by jenkins users will not cross each other we are going to use <b>Shining Panda</b> plugin which can be easy installed via manager. Once created directory will be used
+everytime for configured jenins job. All what we need to do it now is to make this task parametrized and use one of following Python versions:</p>
+
+<p><a href="#" class="image fit"><img src="/assets/images/python_tags.png" /></a></p>
+
+<p>Don’t be worried for this low Python versions - It is used only for pip install command and has no effect on your tests as fair as I know. Just select one from the list and you will be fine.</p>
+
+<p>Now all your libs and plugins which are going to be used in the test needs to be declared. Once again go to BUILD section and look for Virtualenv Build. Now simply put all your installing commands in here.
+Shining Panda will take care of them.</p>
+
+<p><a href="#" class="image fit"><img src="/assets/images/depend.png" /></a></p>
+
+<p>And that’s it. Now you can run your test on SLAVE machine. But now I have got a conclusion - My team leader pointed that this mobile testing platform was kind of proof of concept. Now it is pretty stable
+and fully usable and maintainable but there is no need now to use our own physical devices if we know how to run mobile tests. He said it might be a good time to consider a cloud solution.
+Personally if I would have some budget for it - why not. It will be even more stable solution and will give us option to run tests on more devices and configurations. If we decide to switch to cloud I will
+of course discribe it on this blog I promise it to you.</p>
+
+<center><a href="https://appiumator.github.io/2018/11/15/swollen-samsung.html">Previous post - "Jenkins plugins."</a>
+
+</center>
+</div>
+	 <center><div
+		class="just-comments"
+		data-apikey="fa7789ae-f129-42c1-8af3-c28666835a64">
+	</div></center>
+	</article>
+</div><!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Appiumator. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+  </ul>
+  
+</div></body>
+</html>
