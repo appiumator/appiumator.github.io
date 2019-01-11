@@ -74,6 +74,6 @@ And that's pretty much it. I hope you will find something usefull in this set of
 plugins you recommend for test automation which didn't get to this list this time and are your live-saver on yor project in commends below the post.
 See you next time!
 
- <center><a href="https://appiumator.github.io/2018/11/13/platform-check.html">Previous post - "Platform checks."   </a> <a href="https://appiumator.github.io2018/11/23/swollen-samsung.html">Next post - "Swollen Samsung"</a></center>
+ <center><a href="https://appiumator.github.io/2018/11/13/platform-check.html">Previous post - "Platform checks."   </a> <a href="https://appiumator.github.io/2018/11/23/swollen-samsung.html">Next post - "Swollen Samsung"</a></center>
 
  

@@ -81,5 +81,5 @@ Personally if I would have some budget for it - why not. It will be even more st
 of course discribe it on this blog I promise it to you.
 
 
-<center><a href="https://appiumator.github.io/2018/11/15/swollen-samsung.html">Previous post - "Jenkins plugins."</a>
+<center><a href="https://appiumator.github.io/2018/11/15/swollen-samsung.html">Previous post - "Jenkins plugins."</a> <a href="https://appiumator.github.io/2019/01/11/cross-functioning.html">Next post - "Cross Funtioning"</a></center>
 
